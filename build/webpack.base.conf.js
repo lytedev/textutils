@@ -3,6 +3,8 @@ var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 
+var poststylus = require('poststylus')
+
 var env = process.env.NODE_ENV
 // check env & config/index.js to decide whether to enable CSS source maps for the
 // various preprocessor loaders added to vue-loader at the end of this file
@@ -59,6 +61,14 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.stylus$/,
+        loader: 'style!css!stylus'
+      },
+      {
+        test: /\.pug$/,
+        loader: 'pug'
+      },
+      {
         test: /\.json$/,
         loader: 'json'
       },
@@ -82,6 +92,11 @@ module.exports = {
   },
   eslint: {
     formatter: require('eslint-friendly-formatter')
+  },
+  stylus: {
+    use: [
+      poststylus()
+    ]
   },
   vue: {
     loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
