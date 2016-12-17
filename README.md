@@ -1,4 +1,4 @@
-# textutils
+# TextUtils
 
 > A simple web app for various very simple string/text functions.
 

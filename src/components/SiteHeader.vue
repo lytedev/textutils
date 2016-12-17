@@ -1,10 +1,9 @@
 <template lang="pug">
   header#site-header
     .logo-container
-      .logo
+      router-link.logo(to="/")
         strong Text
         | Utils
-      .pitch Simple, beautiful, and free online text and string utilities.
 </template>
 
 <script>
@@ -22,7 +21,7 @@ export default {
 
   background-color #111
   color #fff
-  padding 0.25rem
+  padding 0.25em
 
   .logo-container
     display flex
@@ -30,10 +29,12 @@ export default {
     flex-grow 1
     text-align center
 
-    @media screen and (max-width: 32rem)
+    @media screen and (max-width: $mobile-breakpoint)
       flex-direction column
 
     .logo
-      font-size 1.5rem
-      padding 0.25rem 0.75rem
+      color #fff
+      cursor pointer
+      font-size 2.4em
+      padding 0.25em
 </style>

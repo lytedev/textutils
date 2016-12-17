@@ -1,12 +1,12 @@
 <template lang="pug">
   .page
-    router-link(to="/") Other Text Utilities
-    p Length:
-      span(v-html="textLength")
+    result(v-bind:value="textLength")
     textarea(v-model="text")
 </template>
 
 <script>
+import Result from '../components/Result.vue'
+
 module.exports = {
   data: function() {
     return {
@@ -17,6 +17,9 @@ module.exports = {
     textLength: function() {
       return this.text.length
     }
+  },
+  components: {
+    Result
   }
 }
 </script>

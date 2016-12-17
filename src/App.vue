@@ -31,7 +31,7 @@ html
   background-color $background-color
 
 body
-  font 1rem 'Lato', sans-serif;
+  font 62.5% 'Lato', sans-serif;
   position relative
   min-height 100vh
   background-color #eee
@@ -48,4 +48,6 @@ a
 .page
   max-width 920px
   margin 0 auto
+  padding 1rem
+  font-size 1.6em
 </style>
