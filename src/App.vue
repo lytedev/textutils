@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import url('https://fonts.googleapis.com/css?family=Lato')
+@import url('https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono')
 
 *::before, *::after, *
   box-sizing border-box
@@ -28,15 +28,21 @@ html, body
   padding 0
 
 html
+  font 62.5% 'Ubuntu', sans-serif;
   background-color $background-color
 
 body
-  font 62.5% 'Lato', sans-serif;
   position relative
-  min-height 100vh
   background-color #eee
 
+h1, h2, h3, h4, h5, h6
+  font-size inherit
+  font-weight inherit
+  margin 0
+  padding 0
+
 #app
+  min-height 100vh
   display flex
   flex-direction column
   justify-content space-between
@@ -46,8 +52,40 @@ a
   color $primary-color
 
 .page
+  width 100%
   max-width 920px
   margin 0 auto
-  padding 1rem
+  padding 1em
   font-size 1.6em
+  flex-grow 1
+  display flex
+  flex-direction column
+
+  h1
+    font-size 2.4rem
+    font-weight bold
+    margin-bottom 1rem
+    text-align center
+
+  .help-text
+    text-align center
+    margin-bottom 1em
+
+input, button, .btn, textarea
+  background-color rgba(255, 255, 255, 1)
+  border-radius 0.2em
+  border solid 1px #ccc
+  font inherit
+  padding 0.5em
+  resize none
+  box-shadow 0px 0.1em 0.1em #ddd
+  transition all 0.2s ease
+  z-index 0
+
+  &:hover
+    box-shadow 0px 0.4em 0.4em #ccc
+    z-index 2
+
+textarea
+  font-family "Ubuntu Mono", monospace
 </style>

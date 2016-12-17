@@ -1,16 +1,24 @@
 <template lang="pug">
   .page
+    h1 String/Text Length
+    .help-text Calculate the length of a string or a bit of text.
     result(v-bind:value="textLength")
-    textarea(v-model="text")
+    main-input-textarea(v-bind:text="text" v-on:main-input-change="setText")
 </template>
 
 <script>
 import Result from '../components/Result.vue'
+import MainInputTextarea from '../components/MainInputTextarea.vue'
 
 module.exports = {
   data: function() {
     return {
-      text: 'Your text here!'
+      text: ''
+    }
+  },
+  methods: {
+    setText: function(text) {
+      this.text = text
     }
   },
   computed: {
@@ -19,7 +27,8 @@ module.exports = {
     }
   },
   components: {
-    Result
+    Result,
+    MainInputTextarea
   }
 }
 </script>

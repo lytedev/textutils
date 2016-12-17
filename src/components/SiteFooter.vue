@@ -21,8 +21,8 @@ export default {
   justify-content space-between
   align-items center
 
-  position absolute
-  bottom 0
+  // position absolute
+  // bottom 0
   width 100%
 
   background-color #111
