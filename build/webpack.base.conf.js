@@ -96,7 +96,8 @@ module.exports = {
   stylus: {
     use: [
       poststylus()
-    ]
+    ],
+    import: [path.resolve(__dirname, '../src/styles/variables.styl')]
   },
   vue: {
     loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),

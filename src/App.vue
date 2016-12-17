@@ -1,28 +1,51 @@
-<template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
-  </div>
+<template lang="pug">
+  #app
+    site-header
+    router-view
+    site-footer
 </template>
 
 <script>
-import Hello from './components/Hello'
+import SiteFooter from './components/SiteFooter.vue'
+import SiteHeader from './components/SiteHeader.vue'
 
 export default {
-  name: 'app',
   components: {
-    Hello
+    SiteHeader,
+    SiteFooter
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus">
+@import url('https://fonts.googleapis.com/css?family=Lato')
+
+*::before, *::after, *
+  box-sizing border-box
+
+html, body
+  margin 0
+  padding 0
+
+html
+  background-color $background-color
+
+body
+  font 1rem 'Lato', sans-serif;
+  position relative
+  min-height 100vh
+  background-color #eee
+
+#app
+  display flex
+  flex-direction column
+  justify-content space-between
+
+a
+  text-decoration none
+  color $primary-color
+
+.page
+  max-width 920px
+  margin 0 auto
 </style>
