@@ -51,15 +51,21 @@ a
   text-decoration none
   color $primary-color
 
+::selection
+  text-shadow none
+  color #fff
+  background-color $primary-color
+
 .page
   width 100%
   max-width 920px
   margin 0 auto
-  padding 1em
-  font-size 1.6em
+  padding 1rem
+  font-size 1.6rem
   flex-grow 1
   display flex
   flex-direction column
+  text-shadow 0px 0.1rem 0.1rem #fff
 
   h1
     font-size 2.4rem
@@ -69,21 +75,21 @@ a
 
   .help-text
     text-align center
-    margin-bottom 1em
+    margin-bottom 1rem
 
 input, button, .btn, textarea
   background-color rgba(255, 255, 255, 1)
-  border-radius 0.2em
+  border-radius 0.3rem
   border solid 1px #ccc
   font inherit
-  padding 0.5em
+  padding 1rem
   resize none
-  box-shadow 0px 0.1em 0.1em #ddd
+  box-shadow 0px 0.1rem 0.1rem #ddd
   transition all 0.2s ease
   z-index 0
 
   &:hover
-    box-shadow 0px 0.4em 0.4em #ccc
+    box-shadow 0px 0.4rem 0.4rem #ccc
     z-index 2
 
 textarea

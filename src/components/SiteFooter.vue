@@ -20,6 +20,7 @@ export default {
   display flex
   justify-content space-between
   align-items center
+  text-shadow 0 0.1rem 0.1rem #000
 
   // position absolute
   // bottom 0

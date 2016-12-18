@@ -1,7 +1,7 @@
 <template lang="pug">
   .page
     h1 String/Text Length
-    .help-text Calculate the length of a string or a bit of text.
+    .help-text Calculate the number of characters (letters, numbers, or symbols) in a string or a bit of text.
     result(v-bind:value="textLength")
     main-input-textarea(v-bind:text="text" v-on:main-input-change="setText")
 </template>
