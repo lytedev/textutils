@@ -25,7 +25,7 @@ export default {
   // bottom 0
   width 100%
 
-  background-color #111
+  background-color $background-color
   color #aaa
   padding 0.5em
 

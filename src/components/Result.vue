@@ -1,8 +1,8 @@
 <template lang="pug">
   .result
     | Length
-    input(v-bind:value="niceValue" readonly v-on:click="selectAll")
-    button Copy
+    input(v-bind:value="niceValue" readonly v-on:click="selectAll" ref="resultInput")
+    button(v-on:click="copyResult") Copy
 </template>
 
 <script>
@@ -14,6 +14,11 @@ module.exports = {
     }
   },
   methods: {
+    copyResult: function(ev) {
+      this.$refs.resultInput.select()
+      let successful = document.execCommand('copy')
+      console.log(successful)
+    },
     selectAll: function(ev) {
       ev.target.select()
     }

@@ -19,7 +19,7 @@ export default {
   justify-content space-between
   align-items center
 
-  background-color #111
+  background-color $background-color
   color #fff
   padding 0.25em
 
