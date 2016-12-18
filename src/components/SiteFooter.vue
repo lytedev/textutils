@@ -1,7 +1,7 @@
 <template lang="pug">
   footer#site-footer
     #copyright Copyright &copy; 2016
-    #byline= "Coded with <3 by "
+    #byline= "Coded with ❤ by "
       a(href="https://lytedev.io" target="_blank") @lytedev
       br
       = "Fork this site on "
