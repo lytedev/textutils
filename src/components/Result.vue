@@ -10,7 +10,8 @@ module.exports = {
   name: 'result',
   computed: {
     niceValue: function() {
-      return this.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+      // return this.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+      return this.value
     }
   },
   methods: {

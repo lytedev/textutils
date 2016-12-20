@@ -4,15 +4,14 @@
     // .icon(v-html="metadata.iconHtml")
     .help-text {{ metadata.description }}
     result(v-bind:value="textLength")
-    main-input-textarea(v-bind:text="text" v-on:main-input-change="setText")
+    main-input-textarea(v-bind:text="text" v-on:main-input-change="urlencode")
+    main-input-textarea(v-bind:text="urlencodedText" v-on:main-input-change="urldecode")
 </template>
 
 <script>
 import Result from '../components/Result.vue'
 import MainInputTextarea from '../components/MainInputTextarea.vue'
 import {Length as PageMetadata} from './page-metadata.js'
-
-console.log('LengthMetadata:', PageMetadata)
 
 export default {
   data: function() {

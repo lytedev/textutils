@@ -1,8 +1,8 @@
 import App from './App'
 import * as Pages from './pages'
 
-console.log(App)
-console.log(Pages)
+console.log('AppComponent:', App)
+console.log('PagesModule:', Pages)
 
 export default [
   {
@@ -12,6 +12,10 @@ export default [
       {
         path: '/',
         component: Pages.Index
+      },
+      {
+        path: 'url-encoder-decoder',
+        component: Pages.Length
       },
       {
         path: 'length',

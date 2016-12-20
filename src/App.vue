@@ -57,14 +57,16 @@ a
   background-color $primary-color
 
 .page
+  display flex
+  flex-wrap wrap
+  flex-direction column
+  flex-grow 1
+
   width 100%
   max-width 920px
   margin 0 auto
   padding 1rem
   font-size 1.6rem
-  flex-grow 1
-  display flex
-  flex-direction column
   text-shadow 0px 0.1rem 0.1rem #fff
 
   h1
