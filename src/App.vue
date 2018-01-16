@@ -9,6 +9,8 @@
 import SiteFooter from './components/SiteFooter.vue'
 import SiteHeader from './components/SiteHeader.vue'
 
+document.title = "TextUtils.org"
+
 export default {
   components: {
     SiteHeader,
