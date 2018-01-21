@@ -10,7 +10,12 @@
 
 <script>
 import {default as PageRoutes} from '../routes/page-routes.js'
+import Page from '../components/mixins/page.js'
+
 export default {
+  mixins: [
+    Page
+  ],
   data: function() {
     return {
       pages: PageRoutes

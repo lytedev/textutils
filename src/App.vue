@@ -14,6 +14,10 @@ export default {
     SiteHeader,
     SiteFooter
   },
+  beforeRouteEnter: function(from, to, next) {
+    document.title = 'TextUtils.org'
+    next()
+  },
   methods: {
     isPageListed: function(page) {
       if (typeof page.meta === 'undefined') return false

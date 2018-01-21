@@ -10,8 +10,12 @@
 <script>
 import Result from '../components/Result.vue'
 import MainInputTextarea from '../components/MainInputTextarea.vue'
+import Page from '../components/mixins/page.js'
 
 export default {
+  mixins: [
+    Page
+  ],
   data: function() {
     return {
       text: ''
