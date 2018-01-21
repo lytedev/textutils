@@ -1,24 +1,20 @@
 <template lang="pug">
   .page
-    h1 {{ metadata.title }}
+    h1 {{ $route.meta.title }}
     // .icon(v-html="metadata.iconHtml")
-    .help-text {{ metadata.description }}
+    .help-text {{ $route.meta.description }}
     result(v-bind:value="textLength")
-    main-input-textarea(v-bind:text="text" v-on:main-input-change="setText")
+    main-input-textarea(v-bind:text="text" v-on:input="setText")
 </template>
 
 <script>
 import Result from '../components/Result.vue'
 import MainInputTextarea from '../components/MainInputTextarea.vue'
-import {Length as PageMetadata} from './page-metadata.js'
-
-console.log('LengthMetadata:', PageMetadata)
 
 export default {
   data: function() {
     return {
-      text: '',
-      metadata: PageMetadata
+      text: ''
     }
   },
   methods: {

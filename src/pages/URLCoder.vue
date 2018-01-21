@@ -1,33 +1,40 @@
 <template lang="pug">
   .page
-    h1 {{ metadata.title }}
+    h1 {{ $route.meta.title }}
     // .icon(v-html="metadata.iconHtml")
-    .help-text {{ metadata.description }}
-    result(v-bind:value="textLength")
-    main-input-textarea(v-bind:text="text" v-on:main-input-change="urlencode")
-    main-input-textarea(v-bind:text="urlencodedText" v-on:main-input-change="urldecode")
+    .help-text {{ $route.meta.description }}
+    // result(v-bind:value="textLength")
+    main-input-textarea(v-bind:text="text" v-on:input="setEncodedText")
+    main-input-textarea(v-bind:text="encodedText" v-on:input="setText")
 </template>
 
 <script>
 import Result from '../components/Result.vue'
 import MainInputTextarea from '../components/MainInputTextarea.vue'
-import {Length as PageMetadata} from './page-metadata.js'
+import Page from '../components/mixins/page.js'
 
 export default {
+  mixins: [
+    Page
+  ],
   data: function() {
     return {
       text: '',
-      metadata: PageMetadata
+      encodedText: ''
     }
   },
   methods: {
+    setEncodedText: function(text) {
+      console.log('setEncodedText', text)
+      this.encodedText = encodeURIComponent(text)
+    },
     setText: function(text) {
-      this.text = text
-    }
-  },
-  computed: {
-    textLength: function() {
-      return this.text.length
+      console.log('setText', text)
+      try {
+        this.text = decodeURIComponent(text)
+      } catch (e) {
+        this.text = e.toString()
+      }
     }
   },
   components: {

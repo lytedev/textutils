@@ -3,7 +3,7 @@
     h1 404
     h3 Page Not Found
     br
-    router-link(to="/") Head Back to the Index
+    router-link(to="/") Back to the Index
 </template>
 
 <script>
