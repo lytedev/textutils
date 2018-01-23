@@ -151,18 +151,20 @@ textarea
         margin 1rem
 
     .info
-      text-align center
+      text-align left
       display flex
       justify-content space-between
       align-items center
       flex-grow 1
       width 100%
       background-color #f4f4f4
-      border-top solid 1px #ccc
+      border-bottom solid 1px #ccc
 
       .label
         padding 1rem
         max-width 80%
+        overflow hidden
+        text-overflow ellipsis
 
       .empty-help
         opacity 0
@@ -190,6 +192,9 @@ textarea
           margin-top 1rem
 
         &:after
+          text-align center
+          overflow hidden
+          text-overflow ellipsis
           padding 1em
           opacity 0
           background $background-color
@@ -203,7 +208,7 @@ textarea
           margin-top 0
           z-index 100
           width 100%
-          font-size 0.9rem
+          font-size 1.3rem
           transition all 0.2s ease
           pointer-events none
 

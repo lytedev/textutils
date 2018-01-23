@@ -1,12 +1,12 @@
 <template lang="pug">
   .result
     | Length
-    input(v-bind:value="niceValue" readonly v-on:click="selectAll" ref="resultInput")
+    input(v-bind:value="niceValue" readonly v-on:click="selectAll" ref="resultInput" width="1")
     button(v-on:click="copyResult") Copy
 </template>
 
 <script>
-module.exports = {
+export default {
   name: 'result',
   computed: {
     niceValue: function() {
@@ -17,8 +17,7 @@ module.exports = {
   methods: {
     copyResult: function(ev) {
       this.$refs.resultInput.select()
-      let successful = document.execCommand('copy')
-      console.log(successful)
+      document.execCommand('copy')
     },
     selectAll: function(ev) {
       ev.target.select()
@@ -37,6 +36,7 @@ module.exports = {
   margin-bottom 1em
 
   input
+    width 10px
     flex-grow 1
     margin-left 0.25em
     border-right none

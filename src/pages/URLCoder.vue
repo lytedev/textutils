@@ -1,22 +1,22 @@
 <template lang="pug">
-  .page
-    h1 {{ $route.meta.title }}
-    // .icon(v-html="metadata.iconHtml")
-    .help-text {{ $route.meta.description }}
-    // result(v-bind:value="textLength")
-    main-input-textarea(v-bind:text="text" v-on:input="setEncodedText")
-    main-input-textarea(v-bind:text="encodedText" v-on:input="setText")
+page
+  // .icon(v-html="metadata.iconHtml")
+  // result(v-bind:value="textLength")
+  main-input-textarea(v-bind:text="text" v-on:input="setEncodedText")
+  main-input-textarea(v-bind:text="encodedText" v-on:input="setText")
 </template>
 
 <script>
 import Result from '../components/Result.vue'
 import MainInputTextarea from '../components/MainInputTextarea.vue'
-import Page from '../components/mixins/page.js'
+import Page from '../components/Page.vue'
 
 export default {
-  mixins: [
-    Page
-  ],
+  components: {
+    Page,
+    Result,
+    MainInputTextarea
+  },
   data: function() {
     return {
       text: '',
@@ -24,22 +24,25 @@ export default {
     }
   },
   methods: {
+    rfc3986EncodeURIComponent: function(str) {
+      return encodeURIComponent(str).replace(/[!'()*]/g, escape)
+    },
+    rfc3986DecodeURIComponent: function(str) {
+      // return decodeURIComponent(str).replace(/[!'()*]/g, escape)
+      return unescape(decodeURIComponent(str))
+    },
     setEncodedText: function(text) {
       console.log('setEncodedText', text)
-      this.encodedText = encodeURIComponent(text)
+      this.encodedText = this.rfc3986EncodeURIComponent(text)
     },
     setText: function(text) {
       console.log('setText', text)
       try {
-        this.text = decodeURIComponent(text)
+        this.text = this.rfc3986DecodeURIComponent(text)
       } catch (e) {
         this.text = e.toString()
       }
     }
-  },
-  components: {
-    Result,
-    MainInputTextarea
   }
 }
 </script>

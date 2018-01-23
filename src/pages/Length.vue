@@ -1,6 +1,5 @@
 <template lang="pug">
   .page
-    h1 {{ $route.meta.title }}
     // .icon(v-html="metadata.iconHtml")
     .help-text {{ $route.meta.description }}
     result(v-bind:value="textLength")
